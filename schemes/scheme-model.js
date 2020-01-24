@@ -8,7 +8,7 @@ module.exports = {
     findSteps,
     add,
     update,
-    // remove
+    remove
 };
 
 // this function gets all the schemes
@@ -48,4 +48,11 @@ function update(changes, id){
     return db('schemes')
         .where({ id })
         .update(changes)
+}
+
+// method to remove scheme
+function remove(id){
+    return db('schemes')
+        .where({ id })
+        .del()
 }
